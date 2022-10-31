@@ -28,19 +28,20 @@ Route::group(['prefix' => 'v1'], function () {
 
 
     Route::post('/register',[UserController::class,'Register']);
+    Route::post('/verify',[UserController::class,'verify'])->middleware('auth:sanctum');
+    Route::post('/Regenerate',[UserController::class,'Regenerate'])->middleware('auth:sanctum');
 
 
 
     Route::get('/debts/count',[DebtsController::class,'count']);
-    Route::post('/debts/store',[DebtsController::class,'store'])->middleware('auth:sanctum');
+    Route::post('/debts/store',[DebtsController::class,'store'])->middleware('auth:sanctum','verify');
     Route::get('/home',[HomeController::class,'index']);
 
     Route::put('/home/update',[HomeController::class,'store'])->middleware('auth:sanctum');
 
 
 
-
-
-
     //protected routes
+
+
 });

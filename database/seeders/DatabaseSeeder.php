@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
 
         Home::create([
             'video_url' => 'www.youtube.com',
-            'landing_page_url' => 'www.youtube.com'
+            'landing_page_url' => 'https://ssddyonk.com/'
 
         ]);
     }
