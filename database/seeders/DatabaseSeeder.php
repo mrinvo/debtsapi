@@ -33,10 +33,10 @@ class DatabaseSeeder extends Seeder
         //     'password' => Hash::make('adminadmin'),
         // ]);
 
-        DB::table('admins')->insert([
+        Admin::create([
             'name' => 'admin',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('123456789'),
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('adminadmin'),
         ]);
 
         Home::create([

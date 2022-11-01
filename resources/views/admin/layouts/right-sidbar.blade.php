@@ -13,7 +13,13 @@
         <hr class="mt-0" />
         <h6 class="text-center mb-0">Choose Layouts</h6>
 
+
+
         <div class="p-4">
+            <div class="form-check form-switch mb-3">
+                <input class="form-check-input theme-choice" type="checkbox" id="" checked>
+                <label class="form-check-label" for="light-mode-switch">وضع التعديل</label>
+            </div>
             <div class="mb-2">
                 <img src="assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="layout-1">
             </div>
