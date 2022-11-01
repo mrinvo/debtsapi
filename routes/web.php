@@ -15,10 +15,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+})->middleware('admin');
+
+//  Route::get('/dashboard', function () {
+//      return view('dashboard');
+//  })->middleware(['admin'])->name('dashboard');
+
+
+
+Route::prefix('/dashboard')->name('admin.')->group(function (){
+
+
+    Route::middleware('admin')->group(function () {
+
+
+    });
+    require __DIR__.'/admin_auth.php';
+
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+//  require __DIR__.'/auth.php';

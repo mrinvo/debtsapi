@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\UserRequest;
+use App\Models\Rule;
 use App\Models\User;
 use App\Models\Verfication;
 use Carbon\Carbon;
@@ -62,7 +63,7 @@ class UserController extends Controller
 
         return Verfication::create([
             'user_id' => $user->id,
-            'otp_code' => rand(123456, 999999),
+            'otp_code' => rand(0000, 9999),
             'expire_at' => Carbon::now()->addMinutes(10),
         ]);
     }
@@ -109,6 +110,53 @@ class UserController extends Controller
         }else{
             return response('otp is not valid',422);
         }
+
+
+
+
+
+    }
+
+    public function rules(){
+        $rules = Rule::find(1);
+
+        $response = [
+            'status' => true,
+            'StatusCode' => 201,
+            'message' => 'your rules and personal id key ',
+            'data' => $rules,
+
+        ];
+
+        return response($response,201);
+    }
+
+    public function updaterules(Request $request){
+
+        $request->validate([
+            'key' => 'required|boolean',
+            'rules' => 'required'
+
+        ]);
+
+        $data = Rule::find(1);
+
+            $data->key = $request->key;
+            $data->rules = $request->rules;
+
+
+
+        $data->save();
+
+        $response = [
+            'status' => true,
+            'StatusCode' => 201,
+            'message' => 'your rules and personal id key are updated ',
+            'data' => $data,
+
+        ];
+
+        return response($response,201);
 
 
 

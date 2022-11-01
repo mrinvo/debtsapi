@@ -4,8 +4,12 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Admin;
 use App\Models\Home;
+use App\Models\Rule;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,10 +27,27 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        // Admin::create([
+        //     'name' => 'admin',
+        //     'email' => 'admin@admin.com',
+        //     'password' => Hash::make('adminadmin'),
+        // ]);
+
+        DB::table('admins')->insert([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('123456789'),
+        ]);
+
         Home::create([
             'video_url' => 'www.youtube.com',
             'landing_page_url' => 'https://ssddyonk.com/'
 
+        ]);
+
+        Rule::create([
+            'key' => 0,
+            'rules' => 'الشروط والاحكام ضع نصك'
         ]);
     }
 }
