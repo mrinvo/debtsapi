@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->text('video_url')->nullable();
             $table->text('landing_page_url')->nullable();
+            $table->boolean('mode')->default(1);
             $table->timestamps();
         });
     }
