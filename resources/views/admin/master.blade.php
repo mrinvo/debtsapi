@@ -177,7 +177,7 @@ $(function(){
   });
  </script>
  <script>
-    // document.querySelector('#rtl-mode-switch').click()
+    document.querySelector('#rtl-mode-switch').click()
     // function changeLayoutDirection(lang){
     //     if(lang=='ar'){
     //         alert('123231132123')
@@ -192,4 +192,4 @@ $(function(){
     </body>
 
 </html>
-/dashboard/
+
