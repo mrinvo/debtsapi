@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html dir='rtl'>
 
     <head>
 
@@ -175,6 +175,19 @@ $(function(){
     });
 
   });
+ </script>
+ <script>
+    // document.querySelector('#rtl-mode-switch').click()
+    // function changeLayoutDirection(lang){
+    //     if(lang=='ar'){
+    //         alert('123231132123')
+    //         document.querySelector('#rtl-mode-switch').click()
+    //     }else{
+    //         alert('12323113212312wqqqw')
+    //         document.querySelector('#light-mode-switch').click()
+    //     }
+    // }
+
  </script>
     </body>
 
