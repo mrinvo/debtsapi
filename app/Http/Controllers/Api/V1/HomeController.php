@@ -18,6 +18,7 @@ class HomeController extends Controller
             'status' => true,
             'StatusCode' => 201,
             'message' => '',
+            'mode' => $data->mode,
             'video url' => $data->video_url,
             'landing_page_url' => $data->landing_page_url,
             'number of subscribers' => $count,
