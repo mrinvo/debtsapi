@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Home::create([
-            'video_url' => 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
+            'video_url' => 'https://www.youtube.com/watch?v=lPOpzOrT9a8',
             'landing_page_url' => 'https://ssddyonk.com/',
 
 
