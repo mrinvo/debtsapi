@@ -8,11 +8,47 @@ use App\Models\Rule;
 use App\Models\User;
 use App\Models\Verfication;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //
+    public function login(Request $request){
+        $fields = $request->validate([
+
+
+
+            'phone' => 'required|numeric|exists:users,phone',
+
+
+        ]);
+
+        $user = User::where('phone',$fields['phone'])
+        ->first();
+        //check email
+
+
+        //check password
+        if(!$user){
+
+            return response([
+                'message' => 'wrong login information'
+            ],401);
+
+        }
+
+        $token = $user->createToken('myapptoken')->plainTextToken;
+
+
+        $response = [
+            'message' => 'logged in successfuly',
+            'user' => $user,
+            'token' => $token,
+
+        ];
+
+        return response($response,201);
+    }
 
     public function Register(UserRequest $request){
         $request->verified = 0;
@@ -195,6 +231,34 @@ class UserController extends Controller
         return response($response,201);
 
 
+
+    }
+    public function logout(Request $request){
+        $request->validate([
+            'destroy' => 'required|boolean',
+        ]);
+        if($request->destroy == 0){
+            auth()->user()->tokens()->delete();
+
+
+
+
+
+            return [
+                'messege' =>'Logged out'
+            ];
+
+        }else{
+            auth()->user()->tokens()->delete();
+            User::find($request->user()->id)->delete();
+
+
+            return [
+                'messege' =>'user deleted'
+            ];
+
+
+        }
 
     }
 

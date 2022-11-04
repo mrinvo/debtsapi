@@ -31,6 +31,8 @@ Route::group(['prefix' => 'v1'], function () {
     Route::post('/register',[UserController::class,'Register']);
     Route::post('/verify',[UserController::class,'verify'])->middleware('auth:sanctum');
     Route::post('/Regenerate',[UserController::class,'Regenerate'])->middleware('auth:sanctum');
+    Route::post('/login',[UserController::class,'login']);
+    Route::post('/logout',[UserController::class,'logout'])->middleware('auth:sanctum');
     Route::get('/rules',[UserController::class,'rules']);
     Route::put('updaterules',[UserController::class , 'updaterules']);
     Route::post('/profile/update',[UserController::class,'updateprofile'])->middleware('auth:sanctum');
