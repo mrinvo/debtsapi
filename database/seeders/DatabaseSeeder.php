@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
         Article::create([
             'title' => 'first article',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora a ad rerum natus officiis, enim deserunt hic, praesentium iusto libero aperiam veritatis cupiditate nulla necessitatibus fugit porro, placeat exercitationem rem?',
-            'img' => asset('upload/Frame.png'),
+            'img' => public_path('upload/Frame.png'),
 
         ]);
         Article::create([
