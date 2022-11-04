@@ -47,7 +47,7 @@ Route::group(['prefix' => 'v1'], function () {
 
     Route::get('/articles/index',[ArticleController::class,'index']);
     Route::get('/articles/show/{id}',[ArticleController::class,'show']);
-    Route::get('/articles/store',[ArticleController::class,'store']);
+    Route::post('/articles/store',[ArticleController::class,'store']);
 
 
 

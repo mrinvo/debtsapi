@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Home::create([
-            'video_url' => 'https://youtu.be/lPOpzOrT9a8',
+            'video_url' => 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
             'landing_page_url' => 'https://ssddyonk.com/',
 
 
@@ -50,19 +50,19 @@ class DatabaseSeeder extends Seeder
         Article::create([
             'title' => 'first article',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora a ad rerum natus officiis, enim deserunt hic, praesentium iusto libero aperiam veritatis cupiditate nulla necessitatibus fugit porro, placeat exercitationem rem?',
-            'img' => asset('api/articles/Frame.png'),
+            'img' => asset('upload/Frame.png'),
 
         ]);
         Article::create([
             'title' => 'second article',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora a ad rerum natus officiis, enim deserunt hic, praesentium iusto libero aperiam veritatis cupiditate nulla necessitatibus fugit porro, placeat exercitationem rem?',
-            'img' => asset('api/articles/Frame.png'),
+            'img' => asset('upload/Frame.png'),
 
         ]);
         Article::create([
             'title' => 'third article',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora a ad rerum natus officiis, enim deserunt hic, praesentium iusto libero aperiam veritatis cupiditate nulla necessitatibus fugit porro, placeat exercitationem rem?',
-            'img' => asset('api/articles/Frame.png'),
+            'img' => asset('upload/Frame.png'),
 
         ]);
 
