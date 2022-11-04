@@ -43,6 +43,7 @@ Route::prefix('/dashboard')->name('admin.')->group(function (){
         Route::post('/storeuser',[AdController::class,'storeuser'])->name('storeuser');
         Route::get('/edituser/{id}',[AdController::class,'edituser'])->name('edituser');
         Route::post('updateuser',[AdController::class,'updateuser'])->name('updateuser');
+        Route::post('/updatehome',[AdController::class,'updatehome'])->name('updatehome');
 
 
     });

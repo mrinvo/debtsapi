@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Admin;
+use App\Models\Article;
 use App\Models\Home;
 use App\Models\Rule;
 use Illuminate\Database\Seeder;
@@ -41,9 +42,30 @@ class DatabaseSeeder extends Seeder
 
         Home::create([
             'video_url' => 'https://youtu.be/lPOpzOrT9a8',
-            'landing_page_url' => 'https://ssddyonk.com/'
+            'landing_page_url' => 'https://ssddyonk.com/',
+
 
         ]);
+
+        Article::create([
+            'title' => 'first article',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora a ad rerum natus officiis, enim deserunt hic, praesentium iusto libero aperiam veritatis cupiditate nulla necessitatibus fugit porro, placeat exercitationem rem?',
+            'img' => asset('api/articles/Frame.png'),
+
+        ]);
+        Article::create([
+            'title' => 'second article',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora a ad rerum natus officiis, enim deserunt hic, praesentium iusto libero aperiam veritatis cupiditate nulla necessitatibus fugit porro, placeat exercitationem rem?',
+            'img' => asset('api/articles/Frame.png'),
+
+        ]);
+        Article::create([
+            'title' => 'third article',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora a ad rerum natus officiis, enim deserunt hic, praesentium iusto libero aperiam veritatis cupiditate nulla necessitatibus fugit porro, placeat exercitationem rem?',
+            'img' => asset('api/articles/Frame.png'),
+
+        ]);
+
 
         Rule::create([
             'key' => 0,

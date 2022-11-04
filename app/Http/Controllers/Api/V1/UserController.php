@@ -162,6 +162,44 @@ class UserController extends Controller
 
     }
 
+    public function updateprofile(Request $request){
+
+        $request->validate([
+
+            'name' => 'max:150',
+            'email'=>'required|email:rfc,dns',
+            'phone' => 'required|numeric',
+            'personal_id' => 'required|numeric',
+
+        ]);
+
+        $data = User::find($request->user()->id);
+
+            $data->name = $request->name;
+            $data->email = $request->email;
+            $data->phone = $request->phone;
+            $data->personal_id = $request->personal_id;
+
+
+
+        $data->save();
+
+        $response = [
+            'status' => true,
+            'StatusCode' => 201,
+            'message' => 'your profile is updated ',
+            'data' => $data,
+
+        ];
+
+        return response($response,201);
+
+
+
+    }
+
+
+
 
 
 }

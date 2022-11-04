@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\ArticleController;
 use App\Http\Controllers\Api\V1\DebtsController;
 use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\HomeController;
@@ -32,6 +33,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::post('/Regenerate',[UserController::class,'Regenerate'])->middleware('auth:sanctum');
     Route::get('/rules',[UserController::class,'rules']);
     Route::put('updaterules',[UserController::class , 'updaterules']);
+    Route::post('/profile/update',[UserController::class,'updateprofile'])->middleware('auth:sanctum');
 
 
 
@@ -40,6 +42,12 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('/home',[HomeController::class,'index']);
 
     Route::put('/home/update',[HomeController::class,'store'])->middleware('auth:sanctum');
+
+    // article
+
+    Route::get('/articles/index',[ArticleController::class,'index']);
+    Route::get('/articles/show/{id}',[ArticleController::class,'show']);
+    Route::get('/articles/store',[ArticleController::class,'store']);
 
 
 

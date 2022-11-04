@@ -4,6 +4,7 @@ namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\Debts;
+use App\Models\Home;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -188,6 +189,27 @@ class AdController extends Controller
             'alert-type' => 'info'
         );
         return redirect()->route('dashboard')->with($notification);
+
+    }
+
+    public function updatehome(Request $request){
+        $home = Home::find(1);
+
+        if($home->mode == 0){
+
+            $home->mode = 1;
+
+        }else{
+            $home->mode = 0;
+        }
+        $home->save();
+        $notification = array(
+            'message' => 'تم التعديل  ',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('dashboard')->with($notification);
+
 
     }
     //

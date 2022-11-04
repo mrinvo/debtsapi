@@ -1,6 +1,9 @@
 @php
     $current_user = App\Models\User::find(Auth::guard('admin')->user()->id);
 
+    $home = \App\Models\Home::find(1);
+
+
 @endphp
 
 <header id="page-topbar">
@@ -30,6 +33,9 @@
             <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
                 <i class="ri-menu-2-line align-middle"></i>
             </button>
+
+
+
 
 
 

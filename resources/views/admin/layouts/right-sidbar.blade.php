@@ -13,12 +13,27 @@
         <hr class="mt-0" />
         <h6 class="text-center mb-0">Choose Layouts</h6>
 
-
+@php
+    $home = \App\Models\Home::find(1);
+@endphp
 
         <div class="p-4">
             <div class="form-check form-switch mb-3">
-                <input class="form-check-input theme-choice" type="checkbox" id="" checked>
-                <label class="form-check-label" for="light-mode-switch">وضع التعديل</label>
+                <br>
+                <form action="{{ route('admin.updatehome') }}" method="POST">
+                    @csrf
+                    @if($home->mode == 1)
+                    <button class="btn btn-danger" type="submit">تفعيل وضع التعديل</button>
+                        @else
+
+
+                        <button class="btn btn-info" type="submit">تفعيل الوضع الطبيعي</button>
+
+                    @endif
+
+
+                </form>
+                <label class="form-check-label" for="light-mode-switch"></label>
             </div>
             {{-- <div class="mb-2">
                 <img src="assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="layout-1">
