@@ -50,18 +50,18 @@ class DatabaseSeeder extends Seeder
         Article::create([
             'title' => 'first article',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora a ad rerum natus officiis, enim deserunt hic, praesentium iusto libero aperiam veritatis cupiditate nulla necessitatibus fugit porro, placeat exercitationem rem?',
-            'img' => base_path('public/upload/Frame.png'),
+            'img' => env('APP_URL'.'public/upload/Frame.png'),
 
         ]);
         Article::create([
             'title' => 'second article',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora a ad rerum natus officiis, enim deserunt hic, praesentium iusto libero aperiam veritatis cupiditate nulla necessitatibus fugit porro, placeat exercitationem rem?',
-            'img' => base_path('public/upload/Frame.png'),
+            'img' => env('APP_URL'.'public/upload/Frame.png'),
         ]);
         Article::create([
             'title' => 'third article',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora a ad rerum natus officiis, enim deserunt hic, praesentium iusto libero aperiam veritatis cupiditate nulla necessitatibus fugit porro, placeat exercitationem rem?',
-            'img' => base_path('public/upload/Frame.png'),
+            'img' => env('APP_URL'.'public/upload/Frame.png'),
 
         ]);
 
