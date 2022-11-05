@@ -218,7 +218,7 @@ class UserController extends Controller
             'name' => 'max:150',
             'email'=>'required|email:rfc,dns',
             'phone' => 'required|numeric',
-            'personal_id' => 'required|numeric',
+            'personal_id' => 'numeric',
 
         ]);
 
