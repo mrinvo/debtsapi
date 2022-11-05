@@ -36,6 +36,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('/rules',[UserController::class,'rules']);
     Route::put('updaterules',[UserController::class , 'updaterules']);
     Route::post('/profile/update',[UserController::class,'updateprofile'])->middleware('auth:sanctum');
+    Route::get('/profile',[UserController::class,'profile'])->middleware('auth:sanctum');
 
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\UserRequest;
+use App\Models\Debts;
 use App\Models\Rule;
 use App\Models\User;
 use App\Models\Verfication;
@@ -18,7 +19,7 @@ class UserController extends Controller
 
 
 
-            'phone' => 'required|numeric|exists:users,phone',
+            'phone' => 'required|exists:users,phone',
 
 
         ]);
@@ -32,18 +33,30 @@ class UserController extends Controller
         if(!$user){
 
             return response([
-                'message' => 'wrong login information'
+                'message' => 'بينات خاطئة'
             ],401);
 
         }
 
+        $user->verified = 0;
+        $user->save();
+
         $token = $user->createToken('myapptoken')->plainTextToken;
+        $otp = $this->generateOtp($request->phone);
+
+        if($otp){
+            $otp_msg = 'تم ارسال كود التخقق الى هاتفك';
+        }else{
+            $otp_msg = 'no otp generated';
+        }
 
 
         $response = [
             'message' => 'logged in successfuly',
             'user' => $user,
             'token' => $token,
+            'otp_msg' => $otp_msg,
+            'otp_code' => $otp->otp_code,
 
         ];
 
@@ -60,7 +73,7 @@ class UserController extends Controller
         $otp = $this->generateOtp($request->phone);
 
         if($otp){
-            $otp_msg = 'otp generated successfuly';
+            $otp_msg = 'تم ارسال كود التخقق الى هاتفك';
         }else{
             $otp_msg = 'no otp generated';
         }
@@ -139,12 +152,12 @@ class UserController extends Controller
 
             $response = [
 
-                'Message' => 'your phone has been verified successfuly',
+                'Message' => 'تم التحقق من هاتفك بنجاح',
             ];
 
             return response($response,201);
         }else{
-            return response('otp is not valid',422);
+            return response(' رقم تحقق خاطئ',422);
         }
 
 
@@ -244,6 +257,7 @@ class UserController extends Controller
 
 
 
+
             return [
                 'messege' =>'Logged out'
             ];
@@ -259,6 +273,27 @@ class UserController extends Controller
 
 
         }
+
+    }
+
+    public function profile(Request $request)
+    {
+        # code...
+
+        $user = User::find($request->user()->id);
+        $debt = Debts::where('user_id',$user->id)->get();
+
+        $response = [
+            'status' => true,
+            'StatusCode' => 201,
+            'message' => 'بينات الشخصية',
+            'user' => $user,
+            'debt' => $debt,
+
+        ];
+
+        return response($response,201);
+
 
     }
 
