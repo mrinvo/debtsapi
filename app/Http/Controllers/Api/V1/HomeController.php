@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Home;
 use App\Models\Debts;
+use App\Models\Rule;
 
 class HomeController extends Controller
 {
@@ -13,11 +14,13 @@ class HomeController extends Controller
 
     public function index(){
         $data = Home::find(1);
+        $key = Rule::find(1);
         $count =  Debts::all()->count();
         $response = [
             'status' => true,
             'StatusCode' => 201,
             'message' => '',
+            'key' => $key->key,
             'mode' => $data->mode,
             'video url' => $data->video_url,
             'landing_page_url' => $data->landing_page_url,
