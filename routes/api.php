@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\AdController;
 use App\Http\Controllers\Api\V1\ArticleController;
 use App\Http\Controllers\Api\V1\DebtsController;
 use App\Http\Controllers\Api\V1\UserController;
@@ -55,6 +56,14 @@ Route::group(['prefix' => 'v1'], function () {
 
 
     //protected routes
+
+        // ads
+
+        Route::get('/ads/index',[AdController::class,'index']);
+        Route::get('/ads/show/{id}',[AdController::class,'show']);
+        Route::post('/ads/store',[AdController::class,'store']);
+
+
 
 
 });
