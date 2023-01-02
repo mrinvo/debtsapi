@@ -12,7 +12,7 @@ class AdsController extends Controller
     public function index(){
         $data = Ad::all();
 
-        return view('admin.ads.index',compact('d'));
+        return view('admin.ads.index',compact('data'));
     }
 
     public function show($id){
