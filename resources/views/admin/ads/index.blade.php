@@ -43,6 +43,7 @@
                                 <th>title</th>
                                 <th>description</th>
                                 <th>image</th>
+                                <th>actions</th>
 
                             </tr>
                             </thead>
@@ -53,7 +54,12 @@
                                 <tr>
                                     <td>{{ $d->title }}</td>
                                     <td>{{ $d->description }}</td>
-                                    <td><img src="{{ $d->img }}" alt=""> </td>
+                                    <td><img width="100" height="100" src="{{ $d->img }}" alt=""> </td>
+                                    <td>
+                                        <a href="" class="btn btn-info">edit</a>
+                                        <a href="" class="btn btn-info">delete</a>
+                                    </td>
+
                                 </tr>
 
                                 @endforeach
