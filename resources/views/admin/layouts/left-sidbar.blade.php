@@ -52,6 +52,13 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{ route('admin.ad.index') }}" class="waves-effect">
+                        <i class="ri-dashboard-line"></i><span class="badge rounded-pill bg-success float-end"></span>
+                        <span>المقالات</span>
+                    </a>
+                </li>
+
 
 
 
