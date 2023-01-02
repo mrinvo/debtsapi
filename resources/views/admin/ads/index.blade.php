@@ -52,8 +52,8 @@
                                 @foreach ($data as $d)
                                 <tr>
                                     <td>{{ $d->title }}</td>
-                                    <td>{{ $d->desctiption }}</td>
-                                    <td>{{ $d->img }}</td>
+                                    <td>{{ $d->description }}</td>
+                                    <td><img src="{{ $d->img }}" alt=""> </td>
                                 </tr>
 
                                 @endforeach
