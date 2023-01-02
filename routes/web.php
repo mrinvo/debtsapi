@@ -45,6 +45,7 @@ Route::prefix('/dashboard')->name('admin.')->group(function (){
         Route::get('/edituser/{id}',[AdController::class,'edituser'])->name('edituser');
         Route::post('updateuser',[AdController::class,'updateuser'])->name('updateuser');
         Route::post('/updatehome',[AdController::class,'updatehome'])->name('updatehome');
+
         //articles
         Route::get('/ad/index',[AdsController::class,'index'])->name('ad.index');
         Route::get('/ad/create',[AdsController::class,'create'])->name('ad.create');
