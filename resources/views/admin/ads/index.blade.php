@@ -10,12 +10,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">المقالات</h4>
+                    <h4 class="mb-sm-0">الاعلانات</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">سدد ديونك</a></li>
-                            <li class="breadcrumb-item active">المقالات</li>
+                            <li class="breadcrumb-item active">الاعلانات</li>
                         </ol>
                     </div>
 
@@ -57,7 +57,7 @@
                                     <td><img width="100" height="100" src="{{ $d->img }}" alt=""> </td>
                                     <td>
                                         <a href="" class="btn btn-info">edit</a>
-                                        <a href="" class="btn btn-info">delete</a>
+                                        <a href="" class="btn btn-danger">delete</a>
                                     </td>
 
                                 </tr>

@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboard\AdController;
 use App\Http\Controllers\dashboard\AdsController;
+use App\Http\Controllers\dashboard\ArticleContrller;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,10 +47,15 @@ Route::prefix('/dashboard')->name('admin.')->group(function (){
         Route::post('updateuser',[AdController::class,'updateuser'])->name('updateuser');
         Route::post('/updatehome',[AdController::class,'updatehome'])->name('updatehome');
 
-        //articles
+        //ads
         Route::get('/ad/index',[AdsController::class,'index'])->name('ad.index');
         Route::get('/ad/create',[AdsController::class,'create'])->name('ad.create');
         Route::get('/ad/store',[AdsController::class,'store'])->name('ad.store');
+
+        //articles
+        Route::get('/article/index',[ArticleContrller::class,'index'])->name('article.index');
+        Route::get('/article/create',[ArticleContrller::class,'create'])->name('article.create');
+        Route::get('/article/store',[ArticleContrller::class,'store'])->name('article.store');
 
 
     });
