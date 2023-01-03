@@ -48,4 +48,12 @@ class AdsController extends Controller
 
 
     }
+    public function destroy($id){
+        $ad = Ad::findOrFail($id);
+        if($ad){
+            $ad->delete();
+        }
+
+        return redirect()->route('admin.ad.index');
+    }
 }

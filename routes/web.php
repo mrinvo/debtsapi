@@ -50,12 +50,14 @@ Route::prefix('/dashboard')->name('admin.')->group(function (){
         //ads
         Route::get('/ad/index',[AdsController::class,'index'])->name('ad.index');
         Route::get('/ad/create',[AdsController::class,'create'])->name('ad.create');
-        Route::get('/ad/store',[AdsController::class,'store'])->name('ad.store');
+        Route::post('/ad/store',[AdsController::class,'store'])->name('ad.store');
+        Route::get('/ad/destroy/{id}',[AdsController::class,'destroy'])->name('ad.destroy');
 
         //articles
         Route::get('/article/index',[ArticleContrller::class,'index'])->name('article.index');
         Route::get('/article/create',[ArticleContrller::class,'create'])->name('article.create');
-        Route::get('/article/store',[ArticleContrller::class,'store'])->name('article.store');
+        Route::post('/article/store',[ArticleContrller::class,'store'])->name('article.store');
+        Route::get('/article/destroy/{id}',[ArticleContrller::class,'destroy'])->name('article.destroy');
 
 
     });

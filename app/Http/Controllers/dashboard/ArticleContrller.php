@@ -48,4 +48,12 @@ class ArticleContrller extends Controller
 
 
     }
+    public function destroy($id){
+        $article = Article::findOrFail($id);
+        if($article){
+            $article->delete();
+        }
+
+        return redirect()->route('admin.article.index');
+    }
 }
