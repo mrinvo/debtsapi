@@ -60,7 +60,7 @@
                                     <td><img width="100" height="100" src="{{ $d->img }}" alt=""> </td>
                                     <td>
                                         <a href="" class="btn btn-info">edit</a>
-                                        <a href="" class="btn btn-danger">delete</a>
+                                        <a href="{{ route('admin.ad.destroy',$d->id) }}" class="btn btn-danger">delete</a>
                                     </td>
 
                                 </tr>

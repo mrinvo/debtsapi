@@ -37,6 +37,8 @@
                         <br>
                         <br>
                         <a class="btn btn-info" href="{{ route('admin.article.create') }}">اضافة المقالات</a>
+                        <br>
+                        <br>
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                             <tr>
@@ -56,8 +58,8 @@
                                     <td>{{ $d->description }}</td>
                                     <td><img width="100" height="100" src="{{ $d->img }}" alt=""> </td>
                                     <td>
-                                        <a href="" class="btn btn-info">edit</a>
-                                        <a href="" class="btn btn-danger">delete</a>
+                                        <a href="{{ route('') }}" class="btn btn-info">edit</a>
+                                        <a href="{{ route('admin.article.destroy',$d->id) }}" class="btn btn-danger">delete</a>
                                     </td>
 
                                 </tr>
