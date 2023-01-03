@@ -36,7 +36,7 @@
                         <h4 class="card-title">المقالات</h4>
                         <br>
                         <br>
-                        <a class="btn btn-info" href="{{ route('admin.article.create') }}">اضافة المقالات</a>
+                        <a class="btn btn-info" href="{{ route('admin.article.store') }}">اضافة المقالات</a>
                         <br>
                         <br>
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">

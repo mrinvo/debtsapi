@@ -8,43 +8,36 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">اضافة مستخدم</h4>
+                        <h4 class="card-title">اضافة اعلان</h4>
                         <hr>
                         <hr>
                         @foreach ($errors->all() as $error)
                         <div class="alert alert-danger">{{ $error }}</div>
                     @endforeach
-                        <form action="{{ route('admin.storeuser') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.ad.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                         <div class="row mb-3">
-                            <label for="name" class="col-sm-2 col-form-label">الاسم</label>
+                            <label for="name" class="col-sm-2 col-form-label">title</label>
                             <div class="col-sm-10">
                                 <input class="form-control" name="name" value="" type="text" id="name">
                             </div>
                         </div>
+                    <!-- end row -->
+                    <div class="row mb-3">
+                        <label for="username" class="col-sm-2 col-form-label">description</label>
+                        <div class="col-sm-10">
+                            <textarea name="form-control" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
                         <!-- end row -->
                         <div class="row mb-3">
-                            <label for="username" class="col-sm-2 col-form-label">الهاتف</label>
+                            <label for="image" class="col-sm-2 col-form-label">image</label>
                             <div class="col-sm-10">
-                                <input class="form-control" name="phone" value="" type="text" id="username">
+                                <input class="form-control" name="img" value="" type="file" id="image">
                             </div>
                         </div>
-                        <!-- end row -->
-                        <div class="row mb-3">
-                            <label for="email" class="col-sm-2 col-form-label">الهوية</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" name="personal_id" type="text" id="personal_id">
-                            </div>
-                        </div>
-                        <!-- end row -->
-                        <div class="row mb-3">
-                            <label for="email" class="col-sm-2 col-form-label">البريد الالكتروني</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" name="email"  type="email" id="email">
-                            </div>
-                        </div>
-                        <!-- end row -->
 
 
                         <input type="submit" value="اضافة" class="btn btn-info waves-effect waves-light" id="">

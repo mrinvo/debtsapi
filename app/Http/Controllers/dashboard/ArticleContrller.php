@@ -44,7 +44,7 @@ class ArticleContrller extends Controller
             'img' => asset('storage/'.$image_path),
         ]);
 
-        return redirect()->route('Articlemin.Article.index');
+        return redirect()->route('admin.article.index');
 
 
     }
