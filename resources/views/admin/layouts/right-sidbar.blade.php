@@ -15,6 +15,7 @@
 
 @php
     $home = \App\Models\Home::find(1);
+    $rule = \App\Models\Rule::find(1);
 @endphp
 
         <div class="p-4">
@@ -23,11 +24,28 @@
                 <form action="{{ route('admin.updatehome') }}" method="POST">
                     @csrf
                     @if($home->mode == 1)
-                    <button class="btn btn-danger" type="submit">تفعيل وضع التعديل</button>
+                    <button class="btn btn-danger" type="submit">mode</button>
                         @else
 
 
-                        <button class="btn btn-info" type="submit">تفعيل الوضع الطبيعي</button>
+                        <button class="btn btn-info" type="submit">mode</button>
+
+                    @endif
+
+
+                </form>
+                <label class="form-check-label" for="light-mode-switch"></label>
+            </div>
+            <div class="form-check form-switch mb-3">
+                <br>
+                <form action="{{ route('admin.key') }}" method="POST">
+                    @csrf
+                    @if($rule->key == 1)
+                    <button class="btn btn-danger" type="submit">key</button>
+                        @else
+
+
+                        <button class="btn btn-info" type="submit">key</button>
 
                     @endif
 

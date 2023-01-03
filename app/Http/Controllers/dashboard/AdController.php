@@ -212,5 +212,26 @@ class AdController extends Controller
 
 
     }
+
+    public function key(Request $request){
+        $home = Home::find(1);
+
+        if($home->mode == 0){
+
+            $home->mode = 1;
+
+        }else{
+            $home->mode = 0;
+        }
+        $home->save();
+        $notification = array(
+            'message' => 'تم التعديل  ',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('dashboard')->with($notification);
+
+
+    }
     //
 }
