@@ -24,7 +24,7 @@ class ArticleContrller extends Controller
     }
 
     public function create(){
-        return view('Articlemin');
+        return view('admin.articles.create');
     }
 
     public function store(Request $request){

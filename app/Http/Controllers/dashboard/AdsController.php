@@ -24,7 +24,7 @@ class AdsController extends Controller
     }
 
     public function create(){
-        return view('admin');
+        return view('admin.ads.create');
     }
 
     public function store(Request $request){
