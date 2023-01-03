@@ -20,14 +20,14 @@
                         <div class="row mb-3">
                             <label for="name" class="col-sm-2 col-form-label">title</label>
                             <div class="col-sm-10">
-                                <input class="form-control" name="name" value="" type="text" id="name">
+                                <input class="form-control" name="title" value="" type="text" id="name">
                             </div>
                         </div>
                     <!-- end row -->
                     <div class="row mb-3">
                         <label for="username" class="col-sm-2 col-form-label">description</label>
                         <div class="col-sm-10">
-                            <textarea name="form-control" id="" cols="30" rows="10"></textarea>
+                            <textarea name="description" class="form-control" id="" cols="30" rows="10"></textarea>
                         </div>
                     </div>
 
